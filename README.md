@@ -21,7 +21,6 @@
 
 ![GitHub Activity Graph](https://activity-graph.herokuapp.com/graph?username=Yash-Sakre) 
 
-![GitHub metrics](https://metrics.lecoq.io/Yash-Sakre)  
 
 <p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=yash-sakre&show_icons=true&locale=en" alt="yash-sakre" /></p> 
 
