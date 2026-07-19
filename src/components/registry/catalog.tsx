@@ -130,8 +130,8 @@ export const PREVIEWS: Record<string, ReactNode> = {
       </HoverPreview>
       , or{" "}
       <HoverPreview
-        image="/thumbnails/typearena.png"
-        href="https://type-arena.vercel.app"
+        image="/thumbnails/brrt.png"
+        href="https://brrt-dun.vercel.app"
         className="cursor-default font-medium text-foreground underline decoration-dotted underline-offset-4"
       >
         brrt

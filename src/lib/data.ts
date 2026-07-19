@@ -197,9 +197,9 @@ export const projects: Project[] = [
     description:
       "A high-performance typing trainer with real-time WPM/CPM, accuracy, and per-keystroke mistake tracking. Diff-based input evaluation and tuned rendering keep feedback instant, even at top speed.",
     tech: ["React", "TypeScript", "Tailwind CSS"],
-    github: "https://github.com/Yash-Sakre/TypeArena",
-    live: "https://type-arena.vercel.app",
-    image: "/thumbnails/typearena.png",
+    github: "https://github.com/Yash-Sakre/brrt",
+    live: "https://brrt-dun.vercel.app",
+    image: "/thumbnails/brrt.png",
   },
 ];
 
