@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "reveal",
+  "type": "registry:ui",
+  "title": "Reveal",
+  "description": "Fades and slides its children up the first time they scroll into view.",
+  "dependencies": [
+    "motion"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "components/ui/reveal.tsx",
+      "type": "registry:ui",
+      "target": "components/ui/reveal.tsx",
+      "content": "\"use client\";\n\nimport { motion, type HTMLMotionProps } from \"motion/react\";\n\ntype RevealProps = HTMLMotionProps<\"div\"> & {\n  /** Stagger helper — delays the fade-up by `delay` seconds. */\n  delay?: number;\n};\n\n/**\n * Fades + slides content up the first time it scrolls into view.\n * Respects `prefers-reduced-motion` via Motion's built-in handling.\n */\nexport function Reveal({ delay = 0, children, ...props }: RevealProps) {\n  return (\n    <motion.div\n      initial={{ opacity: 0, y: 18 }}\n      whileInView={{ opacity: 1, y: 0 }}\n      viewport={{ once: true, margin: \"-80px\" }}\n      transition={{ duration: 0.5, delay, ease: [0.21, 0.47, 0.32, 0.98] }}\n      {...props}\n    >\n      {children}\n    </motion.div>\n  );\n}\n"
+    }
+  ]
+}

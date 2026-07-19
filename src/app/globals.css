@@ -1,0 +1,150 @@
+@import "tailwindcss";
+
+/* Dark mode is driven by a `.dark` class on <html> (set by next-themes). */
+@custom-variant dark (&:is(.dark *));
+
+/* ---------------------------------------------------------------------------
+   Pure-minimal design tokens — a strictly grayscale surface system with no
+   chromatic accent. The only color is `--positive` (a muted green) used for
+   status dots (available / current). Everything else earns attention through
+   type scale, weight, and whitespace. Buttons invert to the foreground color.
+--------------------------------------------------------------------------- */
+:root {
+  --background: oklch(0.985 0 0);
+  --foreground: oklch(0.205 0 0);
+
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.205 0 0);
+
+  --muted: oklch(0.965 0 0);
+  --muted-foreground: oklch(0.53 0 0);
+
+  --accent: oklch(0.955 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+
+  --border: oklch(0.9 0 0);
+  --border-strong: oklch(0.84 0 0);
+  --input: oklch(0.9 0 0);
+
+  /* Primary = foreground: a flat black/white button, no hue. */
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.99 0 0);
+  --ring: oklch(0.44 0 0);
+
+  /* The single functional accent — available / current status. */
+  --positive: oklch(0.63 0.15 152);
+
+  /* Subtle red used to highlight a few important words (e.g. key tech). */
+  --highlight: oklch(0.53 0.16 27);
+}
+
+.dark {
+  --background: oklch(0.165 0 0);
+  --foreground: oklch(0.94 0 0);
+
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.94 0 0);
+
+  --muted: oklch(0.225 0 0);
+  --muted-foreground: oklch(0.66 0 0);
+
+  --accent: oklch(0.245 0 0);
+  --accent-foreground: oklch(0.94 0 0);
+
+  --border: oklch(1 0 0 / 10%);
+  --border-strong: oklch(1 0 0 / 18%);
+  --input: oklch(1 0 0 / 14%);
+
+  --primary: oklch(0.94 0 0);
+  --primary-foreground: oklch(0.17 0 0);
+  --ring: oklch(0.7 0 0);
+
+  --positive: oklch(0.72 0.15 155);
+
+  /* Slightly lighter/softer on dark so it reads without glaring. */
+  --highlight: oklch(0.72 0.15 25);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-input: var(--input);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-ring: var(--ring);
+  --color-positive: var(--positive);
+  --color-highlight: var(--highlight);
+
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-border, currentColor);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans), ui-sans-serif, system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background-color: color-mix(in oklch, var(--foreground) 14%, transparent);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+}
+
+@layer components {
+  /* Tiny uppercase mono eyebrow used for every section label. */
+  .eyebrow {
+    font-family: var(--font-mono), ui-monospace, monospace;
+    font-size: 0.6875rem;
+    line-height: 1;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted-foreground);
+  }
+}
+
+/* Shiki syntax highlighting — dual light/dark token colors via CSS vars.
+   Backgrounds are forced transparent so the surrounding card provides them. */
+.shiki {
+  background-color: transparent !important;
+  padding: 1rem;
+  overflow-x: auto;
+  font-size: 0.8rem;
+  line-height: 1.6;
+}
+.shiki code {
+  font-family: var(--font-mono), ui-monospace, monospace;
+}
+.dark .shiki,
+.dark .shiki span {
+  color: var(--shiki-dark) !important;
+}

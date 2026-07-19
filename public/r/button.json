@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button",
+  "type": "registry:ui",
+  "title": "Button",
+  "description": "Pill button with default, outline, secondary and ghost variants plus four sizes.",
+  "dependencies": [
+    "class-variance-authority"
+  ],
+  "registryDependencies": [
+    "https://yash-sakre.dev/r/utils.json"
+  ],
+  "files": [
+    {
+      "path": "components/ui/button.tsx",
+      "type": "registry:ui",
+      "target": "components/ui/button.tsx",
+      "content": "import * as React from \"react\";\nimport { cva, type VariantProps } from \"class-variance-authority\";\n\nimport { cn } from \"@/lib/utils\";\n\nexport const buttonVariants = cva(\n  \"inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full text-sm font-medium transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50 [&_svg]:size-4 [&_svg]:shrink-0\",\n  {\n    variants: {\n      variant: {\n        default: \"bg-primary text-primary-foreground hover:bg-primary/90\",\n        outline:\n          \"border border-border bg-transparent hover:bg-accent hover:text-accent-foreground\",\n        secondary: \"bg-muted text-foreground hover:bg-muted/70\",\n        ghost: \"hover:bg-accent hover:text-accent-foreground\",\n      },\n      size: {\n        sm: \"h-9 px-3.5\",\n        default: \"h-10 px-5\",\n        lg: \"h-11 px-6 text-[0.95rem]\",\n        icon: \"size-10\",\n      },\n    },\n    defaultVariants: {\n      variant: \"default\",\n      size: \"default\",\n    },\n  },\n);\n\nexport interface ButtonProps\n  extends React.ButtonHTMLAttributes<HTMLButtonElement>,\n    VariantProps<typeof buttonVariants> {}\n\nexport function Button({ className, variant, size, ...props }: ButtonProps) {\n  return (\n    <button\n      className={cn(buttonVariants({ variant, size }), className)}\n      {...props}\n    />\n  );\n}\n"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="tile" x1="0" y1="0" x2="0" y2="64" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2c2c2c" />
+      <stop offset="1" stop-color="#0b0b0b" />
+    </linearGradient>
+    <linearGradient id="sheen" x1="0" y1="0" x2="52" y2="60" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.14" />
+      <stop offset="0.55" stop-color="#ffffff" stop-opacity="0" />
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="15" fill="url(#tile)" />
+  <rect width="64" height="64" rx="15" fill="url(#sheen)" />
+  <rect x="0.6" y="0.6" width="62.8" height="62.8" rx="14.4" fill="none" stroke="#ffffff" stroke-opacity="0.13" />
+  <text x="32.5" y="43.5" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="30" font-weight="800" text-anchor="middle" letter-spacing="-2.5"><tspan fill="#fafafa">Y</tspan><tspan fill="#9a9a9a">S</tspan></text>
+</svg>

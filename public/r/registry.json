@@ -1,0 +1,81 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "yash-sakre/ui",
+  "homepage": "https://yash-sakre.dev",
+  "baseUrl": "https://yash-sakre.dev",
+  "items": [
+    {
+      "name": "utils",
+      "type": "registry:lib",
+      "title": "cn (utils)",
+      "description": "Class-name merge helper — clsx + tailwind-merge. Used by most components.",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [],
+      "target": "lib/utils.ts"
+    },
+    {
+      "name": "button",
+      "type": "registry:ui",
+      "title": "Button",
+      "description": "Pill button with default, outline, secondary and ghost variants plus four sizes.",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "target": "components/ui/button.tsx"
+    },
+    {
+      "name": "badge",
+      "type": "registry:ui",
+      "title": "Badge",
+      "description": "Small pill label with default, outline and primary variants.",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "target": "components/ui/badge.tsx"
+    },
+    {
+      "name": "tooltip",
+      "type": "registry:ui",
+      "title": "Tooltip",
+      "description": "Theme-aware tooltip that springs in with a soft pop; hover + keyboard + reduced-motion aware.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "target": "components/ui/tooltip.tsx"
+    },
+    {
+      "name": "reveal",
+      "type": "registry:ui",
+      "title": "Reveal",
+      "description": "Fades and slides its children up the first time they scroll into view.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [],
+      "target": "components/ui/reveal.tsx"
+    },
+    {
+      "name": "hover-preview",
+      "type": "registry:ui",
+      "title": "Hover Preview",
+      "description": "Wrap any trigger to reveal a cursor-following image popover on hover — the thumbnail springs in inside a little browser frame and trails the pointer.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [],
+      "target": "components/ui/hover-preview.tsx"
+    }
+  ]
+}

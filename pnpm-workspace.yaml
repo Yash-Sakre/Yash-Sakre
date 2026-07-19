@@ -1,0 +1,7 @@
+# Explicit decision on native postinstall build scripts (pnpm 11).
+# Both are skipped: this static site doesn't use next/image (so `sharp` isn't
+# needed) and `unrs-resolver` ships prebuilt binaries. Flip to `true` if you
+# later need their build scripts to run.
+allowBuilds:
+  sharp: false
+  unrs-resolver: false
