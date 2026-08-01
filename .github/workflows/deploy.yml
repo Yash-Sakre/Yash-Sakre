@@ -36,7 +36,11 @@ jobs:
       # Regenerates public/r/*.json, then emits the static site to out/.
       - run: pnpm build
 
+      # `enablement` creates the Pages site on first run, so the deploy does not
+      # depend on someone having flipped Settings -> Pages -> Source by hand.
       - uses: actions/configure-pages@v5
+        with:
+          enablement: true
 
       - uses: actions/upload-pages-artifact@v4
         with:
