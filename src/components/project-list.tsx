@@ -10,6 +10,7 @@ import {
 import { Globe } from "lucide-react";
 
 import type { Project } from "@/lib/data";
+import { withBasePath } from "@/lib/site";
 import { GithubIcon } from "@/components/icons";
 import { Tooltip } from "@/components/tooltip";
 
@@ -145,7 +146,7 @@ export function ProjectList({ projects }: { projects: Project[] }) {
               {active.image ? (
                 // eslint-disable-next-line @next/next/no-img-element
                 <img
-                  src={active.image}
+                  src={withBasePath(active.image)}
                   alt=""
                   className="block aspect-[16/10] w-full object-cover object-top"
                 />

@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 
 import { cn } from "@/lib/utils";
 import { navLinks, sectionIds } from "@/lib/data";
+import { withBasePath } from "@/lib/site";
 import { ThemeToggle } from "@/components/theme-toggle";
 
 export function Navbar() {
@@ -50,7 +51,8 @@ export function Navbar() {
           {navLinks.map((link) => {
             // Section links live on the home page; from another route, point
             // back to it (e.g. "#work" → "/#work") so the anchor resolves.
-            const href = onHome ? link.href : `/${link.href}`;
+            // Raw <a> bypasses basePath, so prefix the cross-route form.
+            const href = onHome ? link.href : withBasePath(`/${link.href}`);
             const isActive = onHome && active === link.href.slice(1);
             return (
               <a
@@ -68,7 +70,7 @@ export function Navbar() {
             );
           })}
           <a
-            href="/components"
+            href={withBasePath("/components")}
             className={cn(
               "-my-1 py-1 transition-colors",
               pathname.startsWith("/components")

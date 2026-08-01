@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
 import { profile } from "@/lib/data";
+import { SITE_URL } from "@/lib/site";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
@@ -18,7 +19,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://yash-sakre.github.io"),
+  metadataBase: new URL(SITE_URL),
   title: {
     default: `${profile.name} — ${profile.role}`,
     template: `%s · ${profile.name}`,

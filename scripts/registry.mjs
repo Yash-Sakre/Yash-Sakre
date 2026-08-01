@@ -16,8 +16,12 @@ import { fileURLToPath } from "node:url";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 
-/** Absolute origin the install command + cross-item deps are built from. */
-export const BASE_URL = "https://yash-sakre.github.io";
+/**
+ * Absolute origin + base path the install command + cross-item deps are built
+ * from. Mirrors SITE_URL in `src/lib/site.ts` — this file is plain JS run by
+ * node, so it cannot import the TS module. Update both together.
+ */
+export const BASE_URL = "https://yash-sakre.github.io/Yash-Sakre";
 
 const OUT_DIR = join(ROOT, "public", "r");
 

@@ -4,6 +4,8 @@ import { useEffect, useState, type ReactNode } from "react";
 import { createPortal } from "react-dom";
 import { AnimatePresence, motion, useMotionValue, useSpring } from "motion/react";
 
+import { withBasePath } from "@/lib/site";
+
 function hostOf(url?: string) {
   if (!url) return null;
   try {
@@ -91,7 +93,7 @@ export function HoverPreview({
             </div>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src={image}
+              src={withBasePath(image)}
               alt=""
               className="block aspect-16/10 w-full object-cover object-top"
             />
