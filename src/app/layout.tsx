@@ -18,7 +18,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://yash-sakre.dev"),
+  metadataBase: new URL("https://yash-sakre.github.io"),
   title: {
     default: `${profile.name} — ${profile.role}`,
     template: `%s · ${profile.name}`,

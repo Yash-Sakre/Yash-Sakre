@@ -17,7 +17,7 @@ import { fileURLToPath } from "node:url";
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 
 /** Absolute origin the install command + cross-item deps are built from. */
-export const BASE_URL = "https://yash-sakre.dev";
+export const BASE_URL = "https://yash-sakre.github.io";
 
 const OUT_DIR = join(ROOT, "public", "r");
 

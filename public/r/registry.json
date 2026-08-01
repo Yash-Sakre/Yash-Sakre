@@ -1,8 +1,8 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry.json",
   "name": "yash-sakre/ui",
-  "homepage": "https://yash-sakre.dev",
-  "baseUrl": "https://yash-sakre.dev",
+  "homepage": "https://yash-sakre.github.io",
+  "baseUrl": "https://yash-sakre.github.io",
   "items": [
     {
       "name": "utils",

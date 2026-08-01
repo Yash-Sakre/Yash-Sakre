@@ -8,7 +8,7 @@
     "class-variance-authority"
   ],
   "registryDependencies": [
-    "https://yash-sakre.dev/r/utils.json"
+    "https://yash-sakre.github.io/r/utils.json"
   ],
   "files": [
     {
