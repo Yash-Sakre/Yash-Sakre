@@ -10,7 +10,7 @@ export const profile = {
   firstName: "Yash",
   role: "Frontend Software Engineer",
   company: "Intozi",
-  location: "India",
+  location: "Gurugram, India",
   email: "yashsakre940@gmail.com",
   phone: "+91 9479182317",
   available: true,
@@ -24,7 +24,7 @@ export const profile = {
    */
   bio: [
     {
-      text: "I build fast, real-time interfaces for the web — from computer-vision automation dashboards to media-heavy, low-latency apps — and sweat the details people feel but rarely notice. Currently building with ",
+      text: "I build fast, real-time interfaces for the web — WebSocket-driven orchestration dashboards, Electron clients decoding H.265 in the browser, and design systems other teams build on — and sweat the details people feel but rarely notice. Currently building with ",
     },
     { text: "React", strong: true },
     { text: ", " },
@@ -37,8 +37,9 @@ export const profile = {
   ] satisfies BioSegment[],
 
   tagline: "Frontend engineer building fast, production-grade interfaces for real-time products.",
+  /** Doubles as the site meta description — keep it near 160–200 characters. */
   summary:
-    "Frontend engineer at Intozi specializing in real-time systems, rendering performance, and scalable UI — turning complex, data-dense workflows into fast, intuitive interfaces.",
+    "Frontend engineer at Intozi building real-time, media-heavy web apps — WebSocket orchestration dashboards, Electron clients with H.265 decoding and HLS at 100-stream scale, and design systems.",
 } as const;
 
 export const socials = {
@@ -106,41 +107,47 @@ export const experiences: Experience[] = [
     role: "Software Developer, Frontend",
     period: "Jan 2025 — Present",
     current: true,
-    location: "India",
+    location: "Gurugram, India",
     type: "Full-time",
     summary:
-      "Building real-time, media-heavy dashboards and visualization tooling that power a computer-vision automation platform — orchestrating cameras, services, and workflows from a single interface.",
-    tech: ["React", "TypeScript", "Electron", "Redux", "Tailwind CSS", "Storybook", "Vite", "Docker", "Nginx"],
+      "Building real-time, media-heavy dashboards and desktop clients that power a computer-vision automation platform — orchestrating cameras, services, and workflows from a single interface.",
+    tech: ["React", "TypeScript", "Electron", "Tailwind CSS", "Storybook", "Vite", "Node.js", "Docker", "Nginx"],
     highlights: [
       {
         title: "Real-time Automation Dashboard",
         description:
-          "Built a real-time dashboard with React Flow and WebSockets to orchestrate Docker-based services, camera switching, and workflow execution — reducing manual operational effort by nearly 40%.",
+          "Built a node-based workflow orchestration dashboard in React Flow, backed by a WebSocket event layer streaming live execution state and camera switching — letting operators compose and run Docker-backed service pipelines visually, and cutting manual operational effort by 40%.",
         tags: ["React Flow", "WebSockets", "Docker"],
       },
       {
-        title: "Chunk-based Video Playback Pipeline",
+        title: "Cross-Platform Video Management System",
         description:
-          "Engineered a chunk-based playback pipeline for long-duration recordings, with optimized buffering, timeline synchronization, and smooth scrubbing even in low-bandwidth environments.",
-        tags: ["Media", "Buffering", "Performance"],
+          "Building an Electron desktop client for video management with client-side H.265 (HEVC) decoding and HLS playback, sustaining 100 concurrent streams at under 2s time-to-first-frame.",
+        tags: ["Electron", "H.265 / HEVC", "HLS"],
+      },
+      {
+        title: "Recording & Streaming Pipeline",
+        description:
+          "Shipped recording management and playback over an NGINX VOD streaming backend, covering seek, scrubbing, and export across multi-camera deployments.",
+        tags: ["NGINX VOD", "Playback", "Multi-camera"],
+      },
+      {
+        title: "Build & Bundle Optimisation",
+        description:
+          "Cut initial bundle size by 80% via route-level code splitting and lazy loading, and migrated the codebase to Vite 8 (Rolldown) — reducing production build times ~7×, from ~70s to under 10s.",
+        tags: ["Vite 8", "Rolldown", "Code splitting"],
+      },
+      {
+        title: "Design System & Component Library",
+        description:
+          "Established a Storybook-based design system of 40+ components with shared design tokens, variants, and documentation — adopted across 3 applications and reducing new-feature UI build time by ~30%.",
+        tags: ["Storybook", "Design System", "Components"],
       },
       {
         title: "Spatial Visualization Engine",
         description:
           "Designed an SVG-based spatial visualization engine to model layouts, live positioning, and camera movement within interactive 2D environments.",
         tags: ["SVG", "Canvas 2D", "Realtime"],
-      },
-      {
-        title: "Cross-Platform Video Management System",
-        description:
-          "Building a cross-platform Electron desktop app for a video management system — with client-side H.265 (HEVC) decoding, HLS playback, and streaming recording served through an NGINX VOD backend.",
-        tags: ["Electron", "H.265 / HLS", "NGINX VOD"],
-      },
-      {
-        title: "Design System & Component Library",
-        description:
-          "Set up Storybook to build and document a reusable design system — standardizing UI primitives, tokens, and interaction states for consistent, faster development across the app.",
-        tags: ["Storybook", "Design System", "Components"],
       },
     ],
   },
@@ -164,20 +171,11 @@ export const projects: Project[] = [
     year: "2025",
     tagline: "Map every reusable asset in your frontend codebase.",
     description:
-      "A CLI and dashboard that scans any React, Next.js, or Vite + TypeScript project and auto-documents every reusable asset — components, hooks, utilities, contexts, stores, and routes — through AST-based semantic analysis, so teams stop rebuilding what already exists.",
+      "A static-analysis platform that maps a React codebase without executing it — auto-discovering components, hooks, utilities, stores, and routes across 1,300 files in 36 seconds. AST-based parsing builds dependency graphs and import relationships, surfacing circular dependencies and dead code in an interactive, searchable dashboard.",
     tech: ["TypeScript", "React", "Vite", "Node.js"],
     github: "https://github.com/Yash-Sakre/atlas",
     live: "https://yash-sakre.github.io/atlas/",
     image: "/thumbnails/atlas.png",
-  },
-  {
-    name: "ChatPDF",
-    year: "2024",
-    tagline: "Talk to your documents.",
-    description:
-      "An AI platform that turns dense PDFs into conversations — chunking and embedding each document for LangChain-powered vector retrieval, then grounding every answer in the most relevant passages. Ships with auth and subscription billing.",
-    tech: ["Next.js", "TypeScript", "Prisma", "PostgreSQL"],
-    github: "https://github.com/Yash-Sakre/chat-pdf",
   },
   {
     name: "Formy",
@@ -195,7 +193,7 @@ export const projects: Project[] = [
     year: "2024",
     tagline: "Type fast, measured to the millisecond.",
     description:
-      "A high-performance typing trainer with real-time WPM/CPM, accuracy, and per-keystroke mistake tracking. Diff-based input evaluation and tuned rendering keep feedback instant, even at top speed.",
+      "A high-performance typing trainer with real-time WPM/CPM, accuracy, and per-keystroke mistake tracking, holding sub-16ms keystroke-to-paint latency — one frame at 60fps — at 150+ WPM. Diff-based input evaluation and scoped re-renders repaint only the characters that changed, keeping the input path off the critical rendering path.",
     tech: ["React", "TypeScript", "Tailwind CSS"],
     github: "https://github.com/Yash-Sakre/brrt",
     live: "https://brrt-dun.vercel.app",
@@ -218,7 +216,8 @@ export const education: Credential = {
 export const achievements: Credential[] = [
   {
     title: "Winner — Kavach 2023",
-    detail: "Ranked among the top teams out of 1,000+ participants.",
+    detail:
+      "Top team out of 1,000+ participants at a national-level hackathon organised by the Government of India.",
     meta: "National Hackathon",
   },
   {

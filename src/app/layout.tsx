@@ -32,6 +32,8 @@ export const metadata: Metadata = {
     "React",
     "Next.js",
     "TypeScript",
+    "Electron",
+    "WebSockets",
     "Portfolio",
   ],
   authors: [{ name: profile.name }],
